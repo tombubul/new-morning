@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<title>morning roll: new morning</title>
+
+<script src="/client.js"></script>
+
+</head>
+
+<body>
+
+<h1>new morning</h1>
+<hr>
+
+<table border="1px">
+<% for (var i = 0; i < rolls.length; i++ ) { %>
+<tr>
+  <td class="player"> <%= rolls[i].player %> </td>
+  <td class="roll"> <%= rolls[i].roll %> </td>
+  <td class="quote"> <%= rolls[i].quote %> </td>
+</tr>
+<% } %>
+</table>
+
+<hr>
+
+<button id="update-button">update button</button>
+
+<hr>
+
+<hr>
+
+<button id="delete-button">delete button</button>
+
+<hr>
+
+<form action="/newroll" method="POST">
+  <input type="text" name="player" placeholder="player" value="tom"></input><br>
+  <input type="text" name="roll" placeholder="roll"></input><br>
+  <input type="text" name="quote" placeholder="quote"></input><br>
+  <!-- current date from javascript; validate using this + name -->
+  <input type="hidden" name="date" value=""> 
+  <button type="submit" label="submit">click</button>
+</form>
+
+</body>
+
+</html>
